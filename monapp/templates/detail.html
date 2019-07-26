@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+   	<head>
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+
+        <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='/css/style.css' ) }}/>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+        <script src="static/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+	 
+        <div class="jumbotron text-center">
+            <h1>Bibliotheque Don N'zati</h1>
+            <p>Les livres ont leur propre destin</p>
+        </div>
+	
+        <div >
+            {% if data|length %}
+             {%for value in data %}
+            <tr>
+                <td><center><strong>id livre : </strong> {{ value[0] }}</center></td>
+                <td><center><strong>Nom livre : </strong> {{ value[1] }}</center></td>
+                <td><center><strong>Nom auteur : </strong> {{ value[2] }}</center></td>
+                <td><center><strong>Nombre de page : </strong> {{ value[3] }}</center></td>
+                <td><center><strong>Annee d'edition : </strong> {{ value[4] }}</center></td>
+                <p></p>
+                
+            </tr>
+	           {% endfor %}
+            {% else %}
+            <center><p>ce livre n'existe pas!</p></center>
+            {% endif %}
+            
+            <center> 
+                <p>
+                    <a href='http://127.0.0.1:5000'><button type="button" class="btn btn-default" >
+                        Retour
+                    </button></a>
+                </p>
+            </center>
+        </div>
+</body>
+</html>

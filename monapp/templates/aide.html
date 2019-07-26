@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+   	<head>
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+
+        <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='/css/style.css' ) }}/>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+        <script src="static/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+	 
+        <div class="jumbotron text-center">
+            <h1>Bibliotheque Don N'zati</h1>
+            <p>Les livres ont leur propre destin</p>
+        </div>
+	
+	<div class="container">
+        <center><h2>Liste des Livres</h2></center>
+          
+        <center><table class="table">
+            <tr>
+                <th><center>Id du livre</center></th>
+                <th><center>Titre du livre</center></th>
+            </tr>
+	           {% for value in name %}
+            <tr>
+                <td><center>{{ value[0] }}</center></td>
+                <td><center>{{ value[1] }}</center></td>
+            </tr>
+	           {% endfor %}
+        </table></center>
+    
+    <center> 
+                        <p>
+                        <a href='http://127.0.0.1:5000'>
+                        <button type="button" class="btn btn-default" >
+                             Retour
+                        </button>
+                        </a>
+                        </p>
+                    </center>
+        
+    </div>	
+         
+</body>
+</html>
